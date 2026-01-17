@@ -5,7 +5,7 @@ import schedule.cron.model.TaskInstance;
 public class PrintTask implements Task {
     @Override
     public void execute(TaskInstance ti) {
-        System.out.println("🌟 Executing task: " + ti.getTaskId() +
+        System.out.println("🌟 Executing task: " + ti.getTaskName() +
                 " from DAG: " + ti.getDagId() +
                 " runId: " + ti.getDagRunId());
     }

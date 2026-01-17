@@ -1,3 +1,4 @@
+// DagRunRepository.java
 package schedule.cron.mongo;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
@@ -18,5 +19,7 @@ public interface DagRunRepository extends MongoRepository<DagRun, String> {
             String dagId,
             DagRunStatus status
     );
-}
 
+    // ✅ 新增：按状态查询所有 DagRun
+    List<DagRun> findByStatus(DagRunStatus status);
+}

@@ -14,6 +14,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
         def = "{'dagId': 1, 'executionDate': 1}",
         unique = true
 )
+@CompoundIndex(name = "status_dagrun_idx",
+        def = "{'status': 1, 'dagRunId': 1}")  // 加速 upstreamDone 查询
 public class DagRun {
 
     @Id
